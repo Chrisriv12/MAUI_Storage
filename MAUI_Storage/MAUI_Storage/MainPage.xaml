@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Storage.MainPage"
+             Title="Chrisnel Rivera - Item Entry App">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Please provide the following information:"
+               FontSize="18" FontAttributes="Bold" />
+
+        <Entry x:Name="ItemIdEntry" Placeholder="Enter Item ID" />
+        <Entry x:Name="ItemNameEntry" Placeholder="Enter Item Name" />
+        <Entry x:Name="ItemDescEntry" Placeholder="Enter Item Description" />
+
+        <Button Text="Save" Clicked="OnSaveClicked" />
+
+        <Label Text="Stored Items:" FontSize="18" FontAttributes="Bold" />
+
+        <CollectionView x:Name="ItemsList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <Label Text="{Binding ItemID}" FontAttributes="Bold"/>
+                        <Label Text="{Binding ItemName}" />
+                        <Label Text="{Binding ItemDescription}" FontAttributes="Italic"/>
+                        <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
+
